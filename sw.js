@@ -1,10 +1,17 @@
-const CACHE_NAME = 'storyfont-pwa-v1';
+const CACHE_NAME = 'stylegram-pwa-v5';
 const CORE_ASSETS = [
   './',
   './index.html',
+  './offline.html',
+  './styles.css',
   './manifest.json',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './js/fonts.js',
+  './js/textStyles.js',
+  './js/bgStyles.js',
+  './js/renderer.js',
+  './js/app.js'
 ];
 
 self.addEventListener('install', (event) => {
@@ -31,27 +38,33 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
+  const isLocalCode =
+    event.request.mode === 'navigate' ||
+    (url.origin === self.location.origin &&
+      /\.(html|js|css|json)$/i.test(url.pathname));
 
-  // Network-first for HTML/navigation so anti-cache (?v=...) and updates load immediately
-  if (event.request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/')) {
+  // Network-First for HTML/JS/CSS/JSON so code updates apply immediately
+  if (isLocalCode) {
     event.respondWith(
-      fetch(event.request)
+      fetch(event.request, { cache: 'no-store' })
         .then((response) => {
-          const cloned = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
+          if (response && response.status === 200) {
+            const cloned = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
+          }
           return response;
         })
-        .catch(() => caches.match('./index.html'))
+        .catch(async () => (await caches.match(event.request)) || caches.match('./offline.html'))
     );
     return;
   }
 
-  // Stale-while-revalidate for local assets and Google Fonts
+  // Cache-First with background refresh for fonts & images
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const networkFetch = fetch(event.request)
         .then((response) => {
-          if (response && response.status === 200) {
+          if (response && (response.status === 200 || response.type === 'opaque')) {
             const cloned = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
           }

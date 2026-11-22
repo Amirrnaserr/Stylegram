@@ -1,15 +1,15 @@
 {
-  "name": "استودیو استوری‌فونت | PRB StyleGram",
-  "short_name": "استوری‌فونت",
-  "description": "طراحی استیکرهای متنی فارسی با ۳ لایه مجزا و خروجی PNG شفاف برای استوری اینستاگرام",
+  "name": "استودیو StyleGram | طراحی متن و استیکر",
+  "short_name": "StyleGram",
+  "description": "استودیو حرفه‌ای طراحی متن، تایپوگرافی و پس‌زمینه با ۲۴ استایل متنی و خروجی PNG شفاف",
   "start_url": "./index.html",
   "scope": "./",
   "dir": "rtl",
   "lang": "fa",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0b0f19",
-  "theme_color": "#0b0f19",
+  "background_color": "#011728",
+  "theme_color": "#011728",
   "categories": ["design", "utilities", "photo"],
   "icons": [
     {

@@ -1,423 +1,271 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>استودیو استوری‌فونت | PRB StyleGram</title>
+  <title>StyleGram Studio | استودیو طراحی متن و استوری</title>
 
-  <meta name="description" content="طراحی استیکرهای متنی فارسی با ۳ لایه مجزا و خروجی PNG شفاف برای استوری اینستاگرام" />
-  <meta name="theme-color" content="#0b0f19" />
+  <meta name="description" content="استودیو حرفه‌ای طراحی متن فارسی و انگلیسی با ۲۴ استایل متنی، ۳۰ پس‌زمینه متن پویا و ۲۴ پس‌زمینه مستقل" />
+  <meta name="theme-color" content="#011728" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="استوری‌فونت" />
+  <meta name="apple-mobile-web-app-title" content="StyleGram" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="apple-touch-icon" sizes="192x192" href="./icon-192.png" />
   <link rel="apple-touch-icon" sizes="512x512" href="./icon-512.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
 
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gulzar&family=Lalezar&family=Markazi+Text:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;700&family=Readex+Pro:wght@400;600;700&family=Rubik:wght@400;600;800&family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cinzel:wght@600;800&family=Inter:wght@400;600;800&family=Lalezar&family=Lato:wght@400;700;900&family=Markazi+Text:wght@400;600;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700;900&family=Noto+Sans+Arabic:wght@400;700;900&family=Nunito:wght@400;700;800&family=Open+Sans:wght@400;700&family=Orbitron:wght@600;800&family=Oswald:wght@500;700&family=Playfair+Display:wght@600;800&family=Poppins:wght@400;600;800&family=Raleway:wght@400;700&family=Readex+Pro:wght@400;600;700&family=Roboto:wght@400;700;900&family=Rubik:wght@400;600;800&family=Ubuntu:wght@400;700&family=Vazirmatn:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.1/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v4.0.5/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/estedad@v5.0.1/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/tanha-font@v0.10.0/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/gandom-font@v0.7.0/dist/font-face.css" rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg-dark: #0b0f19;
-      --glass-bg: rgba(255, 255, 255, 0.06);
-      --glass-border: rgba(255, 255, 255, 0.14);
-      --accent: #38bdf8;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --radius-lg: 22px;
-      --safe-top: env(safe-area-inset-top, 0px);
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
-    }
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.16), transparent 40%),
-                  radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.16), transparent 45%),
-                  var(--bg-dark);
-      color: var(--text-main);
-      padding: calc(14px + var(--safe-top)) 14px calc(24px + var(--safe-bottom));
-    }
-    .app-shell { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-    .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-    }
-    header.topbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 14px 18px; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand img { width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--glass-border); }
-    .brand h1 { margin: 0; font-size: 1.15rem; font-weight: 800; }
-    .brand span { display: block; font-size: 0.78rem; color: var(--text-muted); }
-    .preset-bar { display: flex; gap: 8px; flex-wrap: wrap; }
-    .btn-pill {
-      border: 1px solid var(--glass-border);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 8px 13px;
-      border-radius: 999px;
-      cursor: pointer;
-    }
-    .btn-pill:hover { background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.25)); border-color: rgba(56, 189, 248, 0.6); }
-    .workspace { display: grid; grid-template-columns: 1fr 1.05fr; gap: 16px; align-items: start; }
-    @media (max-width: 860px) { .workspace { grid-template-columns: 1fr; } }
-    .preview-panel { padding: 16px; display: flex; flex-direction: column; gap: 14px; position: sticky; top: 14px; }
-    @media (max-width: 860px) { .preview-panel { position: static; } }
-    .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
-    .panel-title { font-size: 0.92rem; font-weight: 700; color: var(--text-muted); }
-    .bg-switcher { display: flex; gap: 6px; }
-    .bg-chip {
-      font-family: inherit; font-size: 0.75rem; padding: 5px 10px; border-radius: 999px;
-      border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.04); color: var(--text-muted); cursor: pointer;
-    }
-    .bg-chip.active { color: var(--text-main); border-color: var(--accent); background: rgba(56, 189, 248, 0.18); }
-    .stage {
-      min-height: 290px; border-radius: 18px; border: 1px dashed rgba(255, 255, 255, 0.2);
-      display: flex; align-items: center; justify-content: center; padding: 28px 20px; overflow: hidden;
-    }
-    .stage.bg-checker {
-      background-color: #161b28;
-      background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
-      background-size: 22px 22px;
-      background-position: 0 0, 0 11px, 11px -11px, -11px 0;
-    }
-    .stage.bg-dark { background: linear-gradient(160deg, #090d16, #1e293b); }
-    .stage.bg-light { background: linear-gradient(160deg, #f1f5f9, #cbd5e1); }
-    .stage.bg-insta { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4); }
-    #previewCanvas { max-width: 100%; height: auto; display: block; }
-    .export-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    @media (max-width: 480px) { .export-grid { grid-template-columns: 1fr; } }
-    .btn-primary {
-      border: none; border-radius: 13px; padding: 12px 14px; font-family: inherit; font-size: 0.88rem; font-weight: 700;
-      color: #06101c; background: linear-gradient(135deg, #38bdf8, #818cf8); cursor: pointer;
-    }
-    .btn-secondary {
-      border: 1px solid var(--glass-border); border-radius: 13px; padding: 11px 12px; font-family: inherit;
-      font-size: 0.84rem; font-weight: 600; color: var(--text-main); background: rgba(255, 255, 255, 0.06); cursor: pointer;
-    }
-    .single-exports { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-    .single-exports span { font-size: 0.8rem; color: var(--text-muted); }
-    .single-btns { display: flex; gap: 6px; flex-wrap: wrap; }
-    .controls-panel { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
-    .layer-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .layer-tab {
-      padding: 11px 10px; border-radius: 14px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.04);
-      color: var(--text-muted); font-family: inherit; font-size: 0.88rem; font-weight: 700; cursor: pointer;
-    }
-    .layer-tab.active { color: var(--text-main); border-color: var(--accent); background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.18)); }
-    .control-group { display: flex; flex-direction: column; gap: 8px; }
-    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    @media (max-width: 480px) { .row-2 { grid-template-columns: 1fr; } }
-    label.field-label { font-size: 0.82rem; font-weight: 600; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
-    textarea, select {
-      width: 100%; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(15, 23, 42, 0.65);
-      color: var(--text-main); font-family: inherit; font-size: 0.94rem; padding: 10px 12px; outline: none;
-    }
-    input[type="range"] { width: 100%; accent-color: var(--accent); cursor: pointer; }
-    .swatches { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-    .swatch { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.35); cursor: pointer; }
-    input[type="color"] { width: 34px; height: 30px; border: none; border-radius: 8px; background: transparent; cursor: pointer; padding: 0; }
-    .toggle-box {
-      display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px;
-      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .toggle-box span { font-size: 0.86rem; font-weight: 600; }
-    input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
-    .toast {
-      position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%) translateY(20px);
-      background: rgba(15, 23, 42, 0.92); border: 1px solid var(--accent); color: var(--text-main);
-      padding: 10px 18px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; opacity: 0; pointer-events: none; transition: 0.25s ease; z-index: 999;
-    }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  </style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <header class="glass-card topbar">
+  <div class="app-container">
+    <header class="glass-panel topbar">
       <div class="brand">
-        <img src="./icon-192.png" alt="لوگوی استوری‌فونت" />
-        <div>
-          <h1>استودیو استوری‌فونت</h1>
-          <span>PRB StyleGram • طراحی استیکر متنی شفاف</span>
+        <img class="brand-logo" src="./icon-192.png" alt="StyleGram Logo" />
+        <div class="brand-text">
+          <h1>استودیو StyleGram</h1>
+          <span>طراحی حرفه‌ای متن، استایل و پس‌زمینه با خروجی شفاف</span>
         </div>
       </div>
-      <div class="preset-bar">
-        <button class="btn-pill" onclick="applyPreset('minimal')">✨ مینیمال</button>
-        <button class="btn-pill" onclick="applyPreset('neon')">⚡ نئونی</button>
-        <button class="btn-pill" onclick="applyPreset('luxury')">👑 لوکس</button>
-        <button class="btn-pill" onclick="applyPreset('capsule')">💊 کپسولی</button>
+      <div class="header-actions">
+        <button id="themeToggleBtn" type="button" class="icon-btn">☀️ روشن</button>
       </div>
     </header>
 
-    <main class="workspace">
-      <section class="glass-card preview-panel">
-        <div class="panel-head">
-          <span class="panel-title">پیش‌نمایش زنده (خروجی بدون پس‌زمینه)</span>
-          <div class="bg-switcher">
-            <button class="bg-chip active" onclick="setStageBg('checker', this)">شفاف</button>
-            <button class="bg-chip" onclick="setStageBg('dark', this)">تیره</button>
-            <button class="bg-chip" onclick="setStageBg('light', this)">روشن</button>
-            <button class="bg-chip" onclick="setStageBg('insta', this)">استوری</button>
+    <main class="studio-grid">
+      <section class="glass-panel preview-card">
+        <div class="preview-header">
+          <div class="preview-meta">
+            <span>پیش‌نمایش زنده</span>
+            <span id="previewDimBadge" class="badge-pill">1080 × 1080</span>
+          </div>
+          <div class="zoom-control">
+            <span>زوم</span>
+            <input type="range" id="previewZoom" min="60" max="140" value="100" />
+            <strong id="previewZoomVal">100%</strong>
           </div>
         </div>
-        <div id="stage" class="stage bg-checker"><canvas id="previewCanvas"></canvas></div>
-        <div class="export-grid">
-          <button class="btn-primary" onclick="exportSticker('all', 'download')">⬇️ دانلود یکجا PNG</button>
-          <button class="btn-secondary" onclick="exportSticker('all', 'copy')">📋 کپی یکجا</button>
-          <button class="btn-secondary" onclick="exportSticker('all', 'share')">📤 اشتراک / آیفون</button>
-        </div>
-        <div class="single-exports">
-          <span>خروجی تکی لایه‌ها:</span>
-          <div class="single-btns">
-            <button class="btn-pill" onclick="exportSticker(0, 'download')">تیتر PNG</button>
-            <button class="btn-pill" onclick="exportSticker(1, 'download')">توضیح PNG</button>
-            <button class="btn-pill" onclick="exportSticker(2, 'download')">تگ PNG</button>
-            <button class="btn-pill" onclick="exportActiveLayer('share')">📤 اشتراک لایه فعال</button>
+        <div class="preview-stage">
+          <div id="canvasWrapper" class="canvas-wrapper">
+            <canvas id="mainCanvas"></canvas>
           </div>
         </div>
       </section>
 
-      <section class="glass-card controls-panel">
-        <div class="layer-tabs">
-          <button class="layer-tab active" data-layer="0" onclick="selectLayer(0)">۱. تیتر</button>
-          <button class="layer-tab" data-layer="1" onclick="selectLayer(1)">۲. توضیح</button>
-          <button class="layer-tab" data-layer="2" onclick="selectLayer(2)">۳. تگ</button>
-        </div>
-        <div class="toggle-box"><span>نمایش این لایه در خروجی</span><input type="checkbox" id="layerVisible" onchange="updateField('visible', this.checked)" /></div>
-        <div class="control-group"><label class="field-label" for="layerText">متن لایه</label><textarea id="layerText" rows="2" oninput="updateField('text', this.value)"></textarea></div>
-        <div class="row-2">
-          <div class="control-group">
-            <label class="field-label" for="layerFont">فونت فارسی</label>
-            <select id="layerFont" onchange="updateField('font', this.value)">
-              <option value="Vazirmatn">وزیرمتن (Vazirmatn)</option>
-              <option value="Lalezar">لاله‌زار (Lalezar)</option>
-              <option value="Rubik">روبیک (Rubik)</option>
-              <option value="Readex Pro">ریدکس پرو (Readex Pro)</option>
-              <option value="Markazi Text">مرکزی (Markazi Text)</option>
-              <option value="Noto Naskh Arabic">نسخ (Noto Naskh)</option>
-              <option value="Gulzar">گلزار (Gulzar)</option>
-            </select>
+      <section class="glass-panel editor-card">
+        <nav class="tabs-nav" aria-label="ابزارهای استودیو">
+          <button type="button" class="tab-btn active" data-tab="text"><span class="tab-ico">✍️</span><span>متن</span></button>
+          <button type="button" class="tab-btn" data-tab="fonts"><span class="tab-ico">🔤</span><span>فونت</span></button>
+          <button type="button" class="tab-btn" data-tab="textStyle"><span class="tab-ico">✨</span><span>استایل متن</span></button>
+          <button type="button" class="tab-btn" data-tab="textBg"><span class="tab-ico">🏷️</span><span>پس‌زمینه متن</span></button>
+          <button type="button" class="tab-btn" data-tab="background"><span class="tab-ico">🎨</span><span>پس‌زمینه</span></button>
+          <button type="button" class="tab-btn" data-tab="settings"><span class="tab-ico">⚙️</span><span>تنظیمات</span></button>
+          <button type="button" class="tab-btn" data-tab="export"><span class="tab-ico">📤</span><span>خروجی</span></button>
+        </nav>
+
+        <div class="tab-panels">
+          <div id="tab-text" class="tab-panel active">
+            <div class="section-card">
+              <div class="section-title">
+                <span>متن اصلی (فارسی، انگلیسی، عدد و ایموجی)</span>
+                <span id="charCountLabel" style="font-size:0.74rem;color:var(--text-secondary);"></span>
+              </div>
+              <textarea id="mainTextInput" placeholder="متن خود را بنویسید..."></textarea>
+            </div>
+            <div class="section-card">
+              <div class="section-title">تراز و ابعاد متن</div>
+              <div class="field-group">
+                <label class="field-label">تراز افقی متن</label>
+                <div class="seg-group">
+                  <button type="button" class="seg-btn" data-align="right">راست</button>
+                  <button type="button" class="seg-btn active" data-align="center">وسط</button>
+                  <button type="button" class="seg-btn" data-align="left">چپ</button>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field-group">
+                  <label class="field-label">اندازه متن <strong id="textSizeQuickVal">68px</strong></label>
+                  <input type="range" id="textSizeQuick" min="20" max="200" value="68" />
+                </div>
+                <div class="field-group">
+                  <label class="field-label">فاصله خطوط <strong id="textLineHeightVal">1.45</strong></label>
+                  <input type="range" id="textLineHeight" min="0.9" max="2.4" step="0.05" value="1.45" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="control-group">
-            <label class="field-label" for="layerWeight">ضخامت فونت</label>
-            <select id="layerWeight" onchange="updateField('weight', this.value)">
-              <option value="400">معمولی (Regular)</option>
-              <option value="700">ضخیم (Bold)</option>
-              <option value="900">فوق‌ضخیم (Black)</option>
-            </select>
+
+          <div id="tab-fonts" class="tab-panel">
+            <div class="section-card">
+              <div class="section-title">وارد کردن فونت دلخواه (ذخیره دائمی در دستگاه)</div>
+              <div class="field-group">
+                <label class="field-label" for="customFontUpload">انتخاب فایل فونت (.ttf / .otf / .woff / .woff2)</label>
+                <input type="file" id="customFontUpload" accept=".ttf,.otf,.woff,.woff2" style="font-size:0.8rem;" />
+              </div>
+            </div>
+
+            <div class="section-card">
+              <div class="section-title">کتابخانه فونت فارسی و انگلیسی</div>
+              <input type="text" id="fontSearchInput" placeholder="جستجوی نام فونت (مثلاً Vazirmatn یا Orbitron)..." />
+              <div class="seg-group">
+                <button type="button" class="seg-btn active" data-fontcat="all">همه</button>
+                <button type="button" class="seg-btn" data-fontcat="custom">فونت‌های من</button>
+                <button type="button" class="seg-btn" data-fontcat="fa">فارسی</button>
+                <button type="button" class="seg-btn" data-fontcat="en">انگلیسی</button>
+                <button type="button" class="seg-btn" data-fontcat="display">تیتر</button>
+                <button type="button" class="seg-btn" data-fontcat="read">خوانا</button>
+              </div>
+              <div id="fontListContainer" class="font-list"></div>
+            </div>
+
+            <div class="section-card">
+              <div class="field-row">
+                <div class="field-group">
+                  <label class="field-label" for="fontWeightSelect">وزن فونت</label>
+                  <select id="fontWeightSelect">
+                    <option value="300">نازک (300)</option>
+                    <option value="400">معمولی (400)</option>
+                    <option value="600">نیمه‌ضخیم (600)</option>
+                    <option value="700">ضخیم (700)</option>
+                    <option value="800" selected>فوق‌ضخیم (800)</option>
+                    <option value="900">سنگین (900)</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label class="field-label">اندازه فونت <strong id="fontTabSizeVal">68px</strong></label>
+                  <input type="range" id="fontTabSize" min="20" max="200" value="68" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab-textStyle" class="tab-panel">
+            <div class="section-card">
+              <div class="section-title">انتخاب استایل متن (۲۴ استایل واقعی)</div>
+              <div id="textStyleGrid" class="style-grid"></div>
+            </div>
+            <div class="section-card">
+              <div id="activeTextStyleTitle" class="section-title">تنظیمات اختصاصی استایل</div>
+              <div id="textStyleControlsContainer" class="field-row"></div>
+            </div>
+          </div>
+
+          <div id="tab-textBg" class="tab-panel">
+            <div class="section-card">
+              <div class="section-title">پس‌زمینه متن (همگام با سایز متن • ۳۰ استایل)</div>
+              <div id="textBgStyleGrid" class="style-grid"></div>
+            </div>
+            <div class="section-card">
+              <div class="section-title">تنظیمات ابعاد و کادر متن</div>
+              <div class="field-row">
+                <div class="field-group"><label class="field-label">حاشیه افقی <strong id="tbPadXVal">34px</strong></label><input type="range" id="tbPadX" min="6" max="120" value="34" /></div>
+                <div class="field-group"><label class="field-label">حاشیه عمودی <strong id="tbPadYVal">18px</strong></label><input type="range" id="tbPadY" min="4" max="90" value="18" /></div>
+                <div class="field-group"><label class="field-label">گردی گوشه <strong id="tbRadiusVal">22px</strong></label><input type="range" id="tbRadius" min="0" max="80" value="22" /></div>
+                <div class="field-group"><label class="field-label">شفافیت کادر <strong id="tbOpacityVal">92%</strong></label><input type="range" id="tbOpacity" min="15" max="100" value="92" /></div>
+              </div>
+            </div>
+            <div class="section-card">
+              <div id="activeTextBgTitle" class="section-title">تنظیمات اختصاصی کادر</div>
+              <div id="textBgControlsContainer" class="field-row"></div>
+            </div>
+          </div>
+
+          <div id="tab-background" class="tab-panel">
+            <div class="section-card">
+              <div class="section-title">انتخاب پس‌زمینه مستقل (۲۴ استایل)</div>
+              <div id="bgStyleGrid" class="style-grid"></div>
+            </div>
+            <div class="section-card">
+              <div id="activeBgStyleTitle" class="section-title">تنظیمات اختصاصی پس‌زمینه</div>
+              <div id="bgStyleControlsContainer" class="field-row"></div>
+            </div>
+          </div>
+
+          <div id="tab-settings" class="tab-panel">
+            <div class="section-card">
+              <div class="section-title">نسبت تصویر و ابعاد</div>
+              <div class="seg-group">
+                <button type="button" class="seg-btn active" data-ratio="1:1">1:1</button>
+                <button type="button" class="seg-btn" data-ratio="4:5">4:5</button>
+                <button type="button" class="seg-btn" data-ratio="9:16">9:16</button>
+                <button type="button" class="seg-btn" data-ratio="16:9">16:9</button>
+                <button type="button" class="seg-btn" data-ratio="custom">Custom</button>
+              </div>
+              <div class="field-row">
+                <div class="field-group"><label class="field-label" for="setWidth">عرض (px)</label><input type="number" id="setWidth" min="200" max="4096" value="1080" /></div>
+                <div class="field-group"><label class="field-label" for="setHeight">ارتفاع (px)</label><input type="number" id="setHeight" min="200" max="4096" value="1080" /></div>
+              </div>
+            </div>
+            <div class="section-card">
+              <div class="section-title">موقعیت متن و فاصله‌ها</div>
+              <div class="field-group">
+                <label class="field-label">تراز عمودی متن</label>
+                <div class="seg-group">
+                  <button type="button" class="seg-btn" data-valign="top">بالا</button>
+                  <button type="button" class="seg-btn active" data-valign="center">وسط</button>
+                  <button type="button" class="seg-btn" data-valign="bottom">پایین</button>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field-group"><label class="field-label">Padding داخلی <strong id="setPaddingVal">48px</strong></label><input type="range" id="setPadding" min="0" max="160" value="48" /></div>
+                <div class="field-group"><label class="field-label">فاصله از لبه <strong id="setEdgeMarginVal">24px</strong></label><input type="range" id="setEdgeMargin" min="0" max="120" value="24" /></div>
+                <div class="field-group"><label class="field-label">جابه‌جایی افقی <strong id="setOffsetXVal">0px</strong></label><input type="range" id="setOffsetX" min="-300" max="300" value="0" /></div>
+                <div class="field-group"><label class="field-label">جابه‌جایی عمودی <strong id="setOffsetYVal">0px</strong></label><input type="range" id="setOffsetY" min="-300" max="300" value="0" /></div>
+              </div>
+            </div>
+            <div class="section-card">
+              <div class="section-title">قاب، سایه کلی و شفافیت</div>
+              <div class="field-row">
+                <div class="field-group"><label class="field-label">گردی گوشه <strong id="setRadiusVal">0px</strong></label><input type="range" id="setRadius" min="0" max="160" value="0" /></div>
+                <div class="field-group"><label class="field-label">ضخامت حاشیه <strong id="setBorderWidthVal">0px</strong></label><input type="range" id="setBorderWidth" min="0" max="24" value="0" /></div>
+                <div class="field-group"><label class="field-label">سایه کلی متن <strong id="setGlobalShadowVal">0px</strong></label><input type="range" id="setGlobalShadow" min="0" max="45" value="0" /></div>
+                <div class="field-group"><label class="field-label">شفافیت کلی <strong id="setGlobalOpacityVal">100%</strong></label><input type="range" id="setGlobalOpacity" min="15" max="100" value="100" /></div>
+              </div>
+              <div class="field-group"><label class="field-label" for="setBorderColor">رنگ حاشیه</label><input type="color" id="setBorderColor" value="#00D9FF" /></div>
+            </div>
+          </div>
+
+          <div id="tab-export" class="tab-panel">
+            <div class="section-card">
+              <div class="section-title">کیفیت و ابعاد خروجی PNG</div>
+              <div class="field-group">
+                <label class="field-label">ضریب رزولوشن</label>
+                <div class="seg-group">
+                  <button type="button" class="seg-btn" data-expscale="1">1X اصلی</button>
+                  <button type="button" class="seg-btn active" data-expscale="2">2X باکیفیت</button>
+                  <button type="button" class="seg-btn" data-expscale="4">4X فوق‌کیفیت</button>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field-group"><label class="field-label" for="exportWidthInput">عرض پایه (px)</label><input type="number" id="exportWidthInput" min="200" max="4096" value="1080" /></div>
+                <div class="field-group"><label class="field-label" for="exportHeightInput">ارتفاع پایه (px)</label><input type="number" id="exportHeightInput" min="200" max="4096" value="1080" /></div>
+              </div>
+              <div id="exportSizeEstimate" class="badge-pill" style="text-align:center;padding:8px 12px;">2160 × 2160 px</div>
+            </div>
+            <div class="section-card">
+              <div class="section-title">دریافت فایل نهایی</div>
+              <button type="button" id="btnExportDownload" class="btn-primary-gradient">⬇️ دانلود PNG با کیفیت بالا</button>
+              <div class="field-row">
+                <button type="button" id="btnExportCopy" class="btn-glass">📋 کپی در کلیپ‌بورد</button>
+                <button type="button" id="btnExportShare" class="btn-glass">📤 اشتراک‌گذاری (آیفون / موبایل)</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row-2">
-          <div class="control-group"><label class="field-label">سایز متن <span id="sizeVal">44px</span></label><input type="range" id="layerSize" min="16" max="110" oninput="updateField('size', Number(this.value))" /></div>
-          <div class="control-group">
-            <label class="field-label" for="layerAlign">چیدمان</label>
-            <select id="layerAlign" onchange="updateField('align', this.value)">
-              <option value="center">وسط‌چین</option>
-              <option value="right">راست‌چین</option>
-              <option value="left">چپ‌چین</option>
-            </select>
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="field-label">رنگ متن</label>
-          <div class="swatches">
-            <input type="color" id="layerColor" oninput="updateField('color', this.value)" />
-            <button class="swatch" style="background:#ffffff" onclick="setColor('#ffffff')"></button>
-            <button class="swatch" style="background:#0f172a" onclick="setColor('#0f172a')"></button>
-            <button class="swatch" style="background:#fbbf24" onclick="setColor('#fbbf24')"></button>
-            <button class="swatch" style="background:#38bdf8" onclick="setColor('#38bdf8')"></button>
-            <button class="swatch" style="background:#f472b6" onclick="setColor('#f472b6')"></button>
-            <button class="swatch" style="background:#a855f7" onclick="setColor('#a855f7')"></button>
-            <button class="swatch" style="background:#34d399" onclick="setColor('#34d399')"></button>
-          </div>
-        </div>
-        <div class="row-2">
-          <div class="toggle-box"><span>سایه متن</span><input type="checkbox" id="layerShadow" onchange="updateField('shadow', this.checked)" /></div>
-          <div class="toggle-box"><span>دورخط (Stroke)</span><input type="checkbox" id="layerStroke" onchange="updateField('stroke', this.checked)" /></div>
-        </div>
-        <div class="row-2">
-          <div class="control-group">
-            <label class="field-label">رنگ سایه / شدت <span id="shadowBlurVal">14</span></label>
-            <div style="display:flex; gap:8px; align-items:center;"><input type="color" id="layerShadowColor" oninput="updateField('shadowColor', this.value)" /><input type="range" id="layerShadowBlur" min="0" max="40" oninput="updateField('shadowBlur', Number(this.value))" /></div>
-          </div>
-          <div class="control-group">
-            <label class="field-label">رنگ و ضخامت دورخط <span id="strokeWidthVal">3</span></label>
-            <div style="display:flex; gap:8px; align-items:center;"><input type="color" id="layerStrokeColor" oninput="updateField('strokeColor', this.value)" /><input type="range" id="layerStrokeWidth" min="1" max="14" oninput="updateField('strokeWidth', Number(this.value))" /></div>
-          </div>
-        </div>
-        <div class="toggle-box"><span>کادر کپسولی / شیشه‌ای پشت متن</span><input type="checkbox" id="layerBgEnabled" onchange="updateField('bgEnabled', this.checked)" /></div>
-        <div class="row-2">
-          <div class="control-group">
-            <label class="field-label">رنگ و شفافیت کادر <span id="bgAlphaVal">75%</span></label>
-            <div style="display:flex; gap:8px; align-items:center;"><input type="color" id="layerBgColor" oninput="updateField('bgColor', this.value)" /><input type="range" id="layerBgAlpha" min="10" max="100" oninput="updateField('bgAlpha', Number(this.value))" /></div>
-          </div>
-          <div class="control-group"><label class="field-label">گردی گوشه کادر <span id="bgRadiusVal">18px</span></label><input type="range" id="layerBgRadius" min="0" max="48" oninput="updateField('bgRadius', Number(this.value))" /></div>
-        </div>
-        <div class="control-group"><label class="field-label">فاصله عمودی بین لایه‌ها <span id="gapVal">18px</span></label><input type="range" id="globalGap" min="4" max="50" value="18" oninput="updateGap(Number(this.value))" /></div>
       </section>
     </main>
   </div>
   <div id="toast" class="toast"></div>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => {}); });
-    }
-    let activeLayerIndex = 0;
-    let globalGap = 18;
-    const layers = [
-      { name: 'تیتر', visible: true, text: 'استوری جذاب‌تر بساز!', font: 'Lalezar', weight: '700', size: 54, align: 'center', color: '#ffffff', shadow: true, shadowColor: '#000000', shadowBlur: 18, stroke: false, strokeColor: '#0f172a', strokeWidth: 4, bgEnabled: false, bgColor: '#0f172a', bgAlpha: 70, bgRadius: 20 },
-      { name: 'توضیح', visible: true, text: 'طراحی استیکر متنی فارسی با خروجی شفاف', font: 'Vazirmatn', weight: '400', size: 26, align: 'center', color: '#e2e8f0', shadow: true, shadowColor: '#000000', shadowBlur: 10, stroke: false, strokeColor: '#000000', strokeWidth: 2, bgEnabled: false, bgColor: '#0f172a', bgAlpha: 65, bgRadius: 16 },
-      { name: 'تگ', visible: true, text: '@PRB.StyleGram', font: 'Readex Pro', weight: '700', size: 20, align: 'center', color: '#06101c', shadow: false, shadowColor: '#000000', shadowBlur: 8, stroke: false, strokeColor: '#ffffff', strokeWidth: 2, bgEnabled: true, bgColor: '#38bdf8', bgAlpha: 95, bgRadius: 28 }
-    ];
-    function showToast(msg) { const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2600); }
-    function setStageBg(type, btn) { document.getElementById('stage').className = 'stage bg-' + type; document.querySelectorAll('.bg-chip').forEach(c => c.classList.remove('active')); btn.classList.add('active'); }
-    function selectLayer(index) { activeLayerIndex = index; document.querySelectorAll('.layer-tab').forEach((t, i) => t.classList.toggle('active', i === index)); syncControls(); }
-    function syncControls() {
-      const l = layers[activeLayerIndex];
-      document.getElementById('layerVisible').checked = l.visible;
-      document.getElementById('layerText').value = l.text;
-      document.getElementById('layerFont').value = l.font;
-      document.getElementById('layerWeight').value = l.weight;
-      document.getElementById('layerSize').value = l.size;
-      document.getElementById('sizeVal').textContent = l.size + 'px';
-      document.getElementById('layerAlign').value = l.align;
-      document.getElementById('layerColor').value = l.color;
-      document.getElementById('layerShadow').checked = l.shadow;
-      document.getElementById('layerShadowColor').value = l.shadowColor;
-      document.getElementById('layerShadowBlur').value = l.shadowBlur;
-      document.getElementById('shadowBlurVal').textContent = l.shadowBlur;
-      document.getElementById('layerStroke').checked = l.stroke;
-      document.getElementById('layerStrokeColor').value = l.strokeColor;
-      document.getElementById('layerStrokeWidth').value = l.strokeWidth;
-      document.getElementById('strokeWidthVal').textContent = l.strokeWidth;
-      document.getElementById('layerBgEnabled').checked = l.bgEnabled;
-      document.getElementById('layerBgColor').value = l.bgColor;
-      document.getElementById('layerBgAlpha').value = l.bgAlpha;
-      document.getElementById('bgAlphaVal').textContent = l.bgAlpha + '%';
-      document.getElementById('layerBgRadius').value = l.bgRadius;
-      document.getElementById('bgRadiusVal').textContent = l.bgRadius + 'px';
-    }
-    function updateField(key, value) { layers[activeLayerIndex][key] = value; syncControls(); renderPreview(); }
-    function setColor(hex) { updateField('color', hex); }
-    function updateGap(val) { globalGap = val; document.getElementById('gapVal').textContent = val + 'px'; renderPreview(); }
-    function applyPreset(name) {
-      if (name === 'minimal') {
-        Object.assign(layers[0], { font: 'Vazirmatn', weight: '900', color: '#ffffff', shadow: true, shadowColor: '#000000', shadowBlur: 14, stroke: false, bgEnabled: false });
-        Object.assign(layers[1], { font: 'Vazirmatn', weight: '400', color: '#f1f5f9', shadow: true, bgEnabled: false });
-        Object.assign(layers[2], { font: 'Readex Pro', weight: '700', color: '#0f172a', shadow: false, bgEnabled: true, bgColor: '#ffffff', bgAlpha: 90, bgRadius: 28 });
-      } else if (name === 'neon') {
-        Object.assign(layers[0], { font: 'Lalezar', weight: '700', color: '#38bdf8', shadow: true, shadowColor: '#0284c7', shadowBlur: 28, stroke: true, strokeColor: '#e0f2fe', strokeWidth: 2, bgEnabled: false });
-        Object.assign(layers[1], { font: 'Rubik', weight: '600', color: '#f472b6', shadow: true, shadowColor: '#db2777', shadowBlur: 20, bgEnabled: false });
-        Object.assign(layers[2], { font: 'Readex Pro', weight: '700', color: '#ffffff', shadow: true, shadowColor: '#a855f7', shadowBlur: 18, bgEnabled: true, bgColor: '#7e22ce', bgAlpha: 85, bgRadius: 24 });
-      } else if (name === 'luxury') {
-        Object.assign(layers[0], { font: 'Markazi Text', weight: '700', color: '#fbbf24', shadow: true, shadowColor: '#000000', shadowBlur: 20, stroke: false, bgEnabled: false });
-        Object.assign(layers[1], { font: 'Vazirmatn', weight: '400', color: '#fef3c7', shadow: true, bgEnabled: false });
-        Object.assign(layers[2], { font: 'Vazirmatn', weight: '700', color: '#fbbf24', shadow: false, bgEnabled: true, bgColor: '#090d16', bgAlpha: 85, bgRadius: 16 });
-      } else if (name === 'capsule') {
-        Object.assign(layers[0], { font: 'Vazirmatn', weight: '900', color: '#0f172a', shadow: false, stroke: false, bgEnabled: true, bgColor: '#ffffff', bgAlpha: 95, bgRadius: 22 });
-        Object.assign(layers[1], { font: 'Vazirmatn', weight: '600', color: '#ffffff', shadow: false, bgEnabled: true, bgColor: '#0f172a', bgAlpha: 80, bgRadius: 18 });
-        Object.assign(layers[2], { font: 'Readex Pro', weight: '700', color: '#0f172a', shadow: false, bgEnabled: true, bgColor: '#34d399', bgAlpha: 95, bgRadius: 26 });
-      }
-      syncControls(); renderPreview(); showToast('پریست اعمال شد');
-    }
-    function hexToRgba(hex, alphaPercent) {
-      const clean = hex.replace('#', '');
-      return `rgba(${parseInt(clean.substring(0, 2), 16)}, ${parseInt(clean.substring(2, 4), 16)}, ${parseInt(clean.substring(4, 6), 16)}, ${alphaPercent / 100})`;
-    }
-    function drawRoundedRect(ctx, x, y, w, h, r) {
-      const radius = Math.min(r, w / 2, h / 2);
-      ctx.beginPath(); ctx.moveTo(x + radius, y);
-      ctx.arcTo(x + w, y, x + w, y + h, radius); ctx.arcTo(x + w, y + h, x, y + h, radius);
-      ctx.arcTo(x, y + h, x, y, radius); ctx.arcTo(x, y, x + w, y, radius); ctx.closePath();
-    }
-    function renderToCanvas(canvas, targetLayers, scale = 2) {
-      const ctx = canvas.getContext('2d');
-      const active = targetLayers.filter(l => l.visible && l.text.trim().length > 0);
-      const outerPad = 28;
-      if (active.length === 0) {
-        canvas.width = 400 * scale; canvas.height = 140 * scale; ctx.scale(scale, scale); ctx.clearRect(0, 0, 400, 140); return;
-      }
-      const measured = active.map(l => {
-        ctx.font = `${l.weight} ${l.size}px "${l.font}", sans-serif`;
-        const lines = l.text.split('\n');
-        const lineHeight = l.size * 1.42;
-        const maxLineWidth = Math.max(...lines.map(line => ctx.measureText(line).width));
-        const padX = l.bgEnabled ? Math.max(18, l.size * 0.55) : 0;
-        const padY = l.bgEnabled ? Math.max(10, l.size * 0.28) : 0;
-        return { layer: l, lines, lineHeight, padX, padY, boxW: maxLineWidth + padX * 2, boxH: lines.length * lineHeight + padY * 2 };
-      });
-      const contentW = Math.max(...measured.map(m => m.boxW));
-      const contentH = measured.reduce((sum, m, idx) => sum + m.boxH + (idx > 0 ? globalGap : 0), 0);
-      const totalW = Math.ceil(contentW + outerPad * 2);
-      const totalH = Math.ceil(contentH + outerPad * 2);
-      canvas.width = totalW * scale; canvas.height = totalH * scale;
-      canvas.style.width = totalW + 'px'; canvas.style.height = totalH + 'px';
-      ctx.setTransform(scale, 0, 0, scale, 0, 0); ctx.clearRect(0, 0, totalW, totalH);
-      ctx.direction = 'rtl'; ctx.textBaseline = 'middle';
-      let curY = outerPad;
-      measured.forEach(m => {
-        const l = m.layer;
-        let boxX = outerPad + (contentW - m.boxW) / 2;
-        if (l.align === 'right') boxX = outerPad + (contentW - m.boxW);
-        if (l.align === 'left') boxX = outerPad;
-        if (l.bgEnabled) {
-          ctx.save(); ctx.fillStyle = hexToRgba(l.bgColor, l.bgAlpha);
-          drawRoundedRect(ctx, boxX, curY, m.boxW, m.boxH, l.bgRadius); ctx.fill(); ctx.restore();
-        }
-        ctx.save(); ctx.font = `${l.weight} ${l.size}px "${l.font}", sans-serif`; ctx.textAlign = 'center';
-        if (l.shadow) { ctx.shadowColor = l.shadowColor; ctx.shadowBlur = l.shadowBlur; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 4; }
-        const textCenterX = boxX + m.boxW / 2;
-        m.lines.forEach((line, i) => {
-          const lineY = curY + m.padY + (i + 0.5) * m.lineHeight;
-          if (l.stroke) { ctx.lineWidth = l.strokeWidth; ctx.strokeStyle = l.strokeColor; ctx.lineJoin = 'round'; ctx.strokeText(line, textCenterX, lineY); }
-          ctx.fillStyle = l.color; ctx.fillText(line, textCenterX, lineY);
-        });
-        ctx.restore();
-        curY += m.boxH + globalGap;
-      });
-    }
-    function renderPreview() { renderToCanvas(document.getElementById('previewCanvas'), layers, 2); }
-    async function exportSticker(target, mode) {
-      await document.fonts.ready;
-      const exportCanvas = document.createElement('canvas');
-      const targetLayers = target === 'all' ? layers : [{ ...layers[target], visible: true }];
-      const filename = target === 'all' ? 'storyfont-sticker.png' : `storyfont-${target + 1}.png`;
-      renderToCanvas(exportCanvas, targetLayers, 3);
-      exportCanvas.toBlob(async (blob) => {
-        if (!blob) return;
-        if (mode === 'copy') {
-          try { await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]); showToast('تصویر شفاف در کلیپ‌بورد کپی شد!'); return; }
-          catch (e) { showToast('مرورگر اجازه کپی نداد؛ در حال دانلود...'); }
-        }
-        if (mode === 'share' && navigator.share) {
-          const file = new File([blob], filename, { type: 'image/png' });
-          if (!navigator.canShare || navigator.canShare({ files: [file] })) {
-            try { await navigator.share({ files: [file], title: 'استیکر استوری‌فونت' }); showToast('آماده اشتراک‌گذاری شد'); return; }
-            catch (err) { if (err.name === 'AbortError') return; }
-          }
-        }
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a'); a.href = url; a.download = filename; a.click(); URL.revokeObjectURL(url);
-        showToast('فایل PNG شفاف دانلود شد');
-      }, 'image/png');
-    }
-    function exportActiveLayer(mode) { exportSticker(activeLayerIndex, mode); }
-    syncControls(); document.fonts.ready.then(renderPreview); renderPreview();
-  </script>
+  <script type="module" src="./js/app.js?v=5"></script>
 </body>
 </html>
