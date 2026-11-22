@@ -103,12 +103,15 @@ function updateExportEstimate() {
 function initTabs() {
   const buttons = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');
+  const tabPanelsWrap = document.querySelector('.tab-panels');
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.tab;
       state.activeTab = target;
       buttons.forEach(b => b.classList.toggle('active', b.dataset.tab === target));
       panels.forEach(p => p.classList.toggle('active', p.id === `tab-${target}`));
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      if (tabPanelsWrap) tabPanelsWrap.scrollTop = 0;
     });
   });
 }
